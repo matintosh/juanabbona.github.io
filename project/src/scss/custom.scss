@@ -1,0 +1,220 @@
+
+html {
+    background-color: $primary;
+}
+
+body {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+
+    background-color: $primary;
+    min-height: 100vh;
+}
+
+@-webkit-keyframes background-animation {
+    0%{background-position:92% 0%}
+    50%{background-position:9% 100%}
+    100%{background-position:92% 0%}
+}
+@-moz-keyframes background-animation {
+    0%{background-position:92% 0%}
+    50%{background-position:9% 100%}
+    100%{background-position:92% 0%}
+}
+@keyframes background-animation {
+    0%{background-position:92% 0%}
+    50%{background-position:9% 100%}
+    100%{background-position:92% 0%}
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+}
+
+.background-container {
+    position: fixed;
+    top: -10px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background: linear-gradient(-250deg, #002255, #6874e8);
+    background-size: 250% 250%;
+
+    // -webkit-animation: background-animation 30s ease infinite;
+    // -moz-animation: background-animation 30s ease infinite;
+    // animation: background-animation 30s ease infinite;
+}
+
+.profile-card-spacer {
+    @extend .d-block;
+    @extend .d-md-none;
+
+    height: 85px;
+}
+
+.profile-photo {
+    @extend .d-none;
+    @extend .d-md-inline;
+    @extend .shadow;
+    @extend .rounded-circle;
+    height: 170px;
+    width: 170px;
+    object-fit: cover;
+
+    &.mobile {
+        @extend .d-block;
+        @extend .d-md-none;
+        @extend .mx-auto;
+        @extend .mb-3;
+
+        margin-top: -85px;
+    }
+}
+
+.profile-info {
+    @extend .mt-3;
+    @extend .text-secondary;
+    @extend .text-center;
+    @extend .text-md-left;
+    svg {
+        @extend .mx-2;
+        height: 20px;
+        fill: $secondary;
+        margin-top: -3px;
+    }
+}
+
+.social-links {
+    @extend .mt-3;
+    @extend .mt-md-0;
+
+    flex: 1;
+    
+    a {
+        float: left;
+
+        i {
+            color: $gray-500;
+            font-size: 25px;
+        }
+
+        svg {
+            fill: $gray-500;
+            height: 25px;
+            margin-top: -6px;
+        }
+    }
+}
+
+.skill {
+    @extend .mb-4;
+
+    display: flex;
+
+    i {
+        @extend .mr-2;
+        background-color: $gray-200;
+        border-radius: 100%;
+        padding: 10px;
+        color: $secondary;
+        font-size: 25px;
+    }
+
+    .details {
+        @extend .px-2;
+
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;        
+
+        .progress {
+            @extend .mt-1;
+            @extend .mb-1;
+        }
+    }
+}
+
+.timeline {
+    @extend .pt-2;
+    @extend .px-3;
+    list-style-type: none;
+    position: relative;
+
+    li {
+        @extend .pb-4;
+        position: relative;
+        padding-left: 30px;
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        &:after {
+            content: ' ';
+            width: 3px;
+            height: 100%;
+            display: block;
+            background-color: $gray-200;
+            position: absolute;
+            top: 5px;
+            bottom: 0;
+            left: 6px;
+        }
+
+        &:before {
+            content: ' ';
+            background: $secondary;
+            display: inline-block;
+            position: absolute;
+            border-radius: 50%;
+            left: 0;
+            top: 2px;
+            width: 15px;
+            height: 15px;
+            z-index: 5;
+        }
+
+        &:last-child {
+            @extend .pb-0;
+            border: none;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.languages-list {
+    @extend .px-0;
+    list-style-type: none;
+
+    li {
+        @extend .pb-3;
+
+        &:last-child {
+            @extend .pb-0;
+        }
+    }
+}
+
+.d-pdf-show {
+    display: none !important;
+}
+
+// .d-pdf-hide {
+//     display: none !important;
+// }

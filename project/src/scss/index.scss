@@ -1,0 +1,31 @@
+// Override Bootstrap variables
+
+$primary: #002255 !default;
+$secondary: #DB2763 !default;
+
+$progress-height: 3px;
+
+$font-size-base: .9rem !default; // Assumes the browser default, typically `16px`
+
+$font-family-base: 'Poppins', sans-serif !default;
+
+@import '../../node_modules/devicon/devicon.min.css';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+@import './custom.scss';
+@import './fonts.scss';
+
+.card {
+    @extend .border-0;
+    @extend .shadow-sm;
+    @extend .mb-4;
+    @extend .px-1;
+
+    .card-title {
+        @extend .mb-4;
+    }
+}
+
+a {
+    text-decoration: none !important;
+}
